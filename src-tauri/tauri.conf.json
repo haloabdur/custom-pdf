@@ -1,0 +1,81 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Lembar",
+  "version": "1.0.0",
+  "identifier": "id.lembar.app",
+  "build": {
+    "frontendDist": "../ui"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "label": "main",
+        "title": "Lembar",
+        "width": 1280,
+        "height": 820,
+        "minWidth": 960,
+        "minHeight": 640,
+        "center": true,
+        "dragDropEnabled": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self' ipc: http://ipc.localhost; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; connect-src 'self' ipc: http://ipc.localhost data: blob:"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "category": "Productivity",
+    "shortDescription": "Edit, gabung dan pecah PDF",
+    "longDescription": "Lembar adalah aplikasi desktop sederhana untuk mengedit teks dan gambar di PDF tanpa merusak template, menggabungkan beberapa PDF menjadi satu, dan memecah PDF menjadi file terpisah. Semua diproses di perangkat Anda.",
+    "copyright": "© 2026 Abdurrahman Trimanto. MIT License.",
+    "license": "MIT",
+    "licenseFile": "../LICENSE",
+    "publisher": "Abdurrahman Trimanto",
+    "homepage": "https://github.com/haloabdur/custom-pdf",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "fileAssociations": [
+      {
+        "ext": [
+          "pdf"
+        ],
+        "name": "PDF Document",
+        "description": "PDF document",
+        "mimeType": "application/pdf",
+        "role": "Editor"
+      }
+    ],
+    "linux": {
+      "deb": {
+        "section": "graphics",
+        "desktopTemplate": "lembar.desktop"
+      },
+      "rpm": {
+        "desktopTemplate": "lembar.desktop"
+      },
+      "appimage": {
+        "bundleMediaFramework": false
+      }
+    },
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser",
+        "languages": [
+          "English",
+          "Indonesian"
+        ]
+      }
+    },
+    "macOS": {
+      "minimumSystemVersion": "11.0"
+    }
+  }
+}

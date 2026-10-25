@@ -1,0 +1,16 @@
+[package]
+name = "lembar-core"
+description = "PDF engine for Lembar: merge, split and in-place text/image editing"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+lopdf = { version = "0.46", default-features = false }
+image = { version = "0.25", default-features = false, features = ["jpeg", "png", "webp", "gif", "bmp"] }
+serde = { version = "1", features = ["derive"] }
+thiserror = "2"
+flate2 = "1"
